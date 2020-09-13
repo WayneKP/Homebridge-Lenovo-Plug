@@ -9,7 +9,7 @@ s{
         "title": "Name",
         "type": "string",
         "required": true,
-        "default": "Example Dynamic Platform"
+        "default": "Lenovo Plug"
       }
     }
   }
