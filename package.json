@@ -7,10 +7,10 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/WayneKP/Lenovo-Plug.git"
+    "url": "git://github.com/WayneKP/HomeBridge-Lenovo-Plug.git"
   },
   "bugs": {
-    "url": "https://github.com/WayneKP/Lenovo-Plug/issues"
+    "url": "https://github.com/WayneKP/Homebridge-Lenovo-Plug/issues"
   },
   "engines": {
     "node": ">=10.17.0",
