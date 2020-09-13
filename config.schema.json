@@ -1,6 +1,6 @@
-{
+s{
   "pluginAlias": "Homebridge-Lenovo-Plug",
-  "pluginType": "platform",
+  "pluginType": "accessory",
   "singular": true,
   "schema": {
     "type": "object",
