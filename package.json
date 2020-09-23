@@ -1,7 +1,7 @@
 {
   "private": true,
   "displayName": "Homebridge Lenovo Plug",
-  "name": "Homebridge-Lenovo-Plug",
+  "name": "homebridge-accessory-lenovo-plug",
   "version": "1.0.0",
   "description": "Control_Lenovo_Smart_Plug",
   "license": "Apache-2.0",
