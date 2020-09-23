@@ -6,4 +6,4 @@ export const PLATFORM_NAME = 'Homebridge-Homebridge-Lenovo-Plug';
 /**
  * This must match the name of your plugin as defined the package.json
  */
-export const PLUGIN_NAME = 'homebridge-Accessory-Homebridge-Lenovo-Plug';
+export const PLUGIN_NAME = 'homebridge-accessory-homebridge-lenovo-plug';
