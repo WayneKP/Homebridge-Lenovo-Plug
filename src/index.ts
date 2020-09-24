@@ -1,4 +1,4 @@
-import { API } from 'homebridge';
+import { API } from 'homebridge-homebridge-lenovo-plug';
 
 import { Homebridge-Homebridge-Lenovo-Plug } from './settings';
 import { Homebridge-Homebridge-Lenovo-Plug } from './platform'; 
