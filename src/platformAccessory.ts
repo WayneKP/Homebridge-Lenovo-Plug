@@ -14,7 +14,7 @@ export class PlatformAccessory {
    * These are just used to create a working example
    * You should implement your own code to track the state of your accessory
    */
-  private exampleStates = {
+  private States = {
     On: false,
     Brightness: 100,
   }
@@ -118,7 +118,7 @@ export class PlatformAccessory {
   getOn(callback: CharacteristicGetCallback) {
 
     // implement your own code to check if the device is on
-    const isOn = this.exampleStates.On;
+    const isOn = this.States.On;
 
     this.platform.log.debug('Get Characteristic On ->', isOn);
 
