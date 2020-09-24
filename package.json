@@ -1,5 +1,5 @@
 {
-  "private": false,
+  "private": true,
   "displayName": "Homebridge Lenovo Plug",
   "name": "homebridge-accessory-lenovo-plug",
   "version": "1.0.0",
