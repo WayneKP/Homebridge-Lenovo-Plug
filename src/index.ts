@@ -1,7 +1,7 @@
 import { API } from 'homebridge';
 
-import { Lenovo-Plug } from './settings';
-import { HomebridgePlatform } from './platform'; 
+import { Homebridge-Homebridge-Lenovo-Plug } from './settings';
+import { Homebridge-Homebridge-Lenovo-Plug } from './platform'; 
 
 /**
  * This method registers the platform with Homebridge
