@@ -81,7 +81,7 @@ export class PlatformAccessory {
   setOn(value: CharacteristicValue, callback: CharacteristicSetCallback) {
 
     // implement your own code to turn your device on/off
-    this.exampleStates.On = value as boolean;
+    this.States.On = value as boolean;
 
     this.platform.log.debug('Set Characteristic On ->', value);
 
@@ -122,9 +122,9 @@ export class PlatformAccessory {
   setBrightness(value: CharacteristicValue, callback: CharacteristicSetCallback) {
 
     // implement your own code to set the brightness
-    this.exampleStates.Brightness = value as number;
+    this.States. = value as number;
 
-    this.platform.log.debug('Set Characteristic Brightness -> ', value);
+    this.platform.log.debug('Set Characteristic -> ', value);
 
     // you must call the callback function
     callback(null);
