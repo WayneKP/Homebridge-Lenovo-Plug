@@ -7,5 +7,5 @@ import { Homebridge-Homebridge-Lenovo-Plug } from './platform';
  * This method registers the platform with Homebridge
  */
 export = (api: API) => {
-  api.registerPlatform(Lenovo-Plug, HomebridgePlatform);
+  api.registerPlatform(Homebridge-Homebridge-Lenovo-Plug, HomebridgePlatform);
 }
