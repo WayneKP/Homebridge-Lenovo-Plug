@@ -1,13 +1,13 @@
-import { Service, PlatformAccessory, CharacteristicValue, CharacteristicSetCallback, CharacteristicGetCallback } from 'homebridge';
+import { PlatformAccessory } from 'homebridge';
 
-import { Homebridge-lenovo-plug-Platform } from './platform';
+import { ExampleHomebridgePlatform } from './platform';
 
 /**
  * Platform Accessory
  * An instance of this class is created for each accessory your platform registers
  * Each accessory may expose multiple services of different service types.
  */
-export class lenovo-plug {
+export class ExamplePlatformAccessory {
   private service: Service;
 
   /**
@@ -20,7 +20,7 @@ export class lenovo-plug {
   }
 
   constructor(
-    private readonly platform: HomebridgeLenovoPlugPlatform,
+    private readonly platform: ExampleHomebridgePlatform,
     private readonly accessory: PlatformAccessory,
   ) {
 
@@ -47,8 +47,8 @@ export class lenovo-plug {
       .on('get', this.getOn.bind(this));               // GET - bind to the `getOn` method below
 
     // register handlers for the Brightness Characteristic
-    this.service.getCharacteristic(this.platform.Characteristic.Off)
-      .on('set', this.setOff.bind(this));       // SET - bind to the 'setBrightness` method below
+    this.service.getCharacteristic(this.platform.Characteristic.Brightness)
+      .on('set', this.setBrightness.bind(this));       // SET - bind to the 'setBrightness` method below
 
 
     /**
@@ -63,12 +63,7 @@ export class lenovo-plug {
      */
 
     // Example: add two "motion sensor" services to the accessory
-    const SwitchOneService = this.accessory.getService('Switch One On') ||
-      this.accessory.addService(this.platform.Service.Switch, 'Switch One Name', 'YourUniqueIdentifier-1');
-
-    const SwitchTwoService = this.accessory.getService('Switch Two Off') ||
-      this.accessory.addService(this.platform.Service.Switch, 'Switch Two Name', 'YourUniqueIdentifier-2');
-
+    
     /**
      * Updating characteristics values asynchronously.
      * 
@@ -78,17 +73,17 @@ export class lenovo-plug {
      * the `updateCharacteristic` method.
      * 
      */
-    let SwitchOnDetected = false;
+    let motionDetected = false;
     setInterval(() => {
       // EXAMPLE - inverse the trigger
-      switchoffDetected = !SwitchOffDetected;
+      motionDetected = !motionDetected;
 
       // push the new value to HomeKit
-      SwitchOneService.updateCharacteristic(this.platform.Characteristic.SwitchOnDetected, SwitchOnDetected);
-      SwitchTwoService.updateCharacteristic(this.platform.Characteristic.SwitchOffDetected, !SwitchOffDetected);
+      motionSensorOneService.updateCharacteristic(this.platform.Characteristic.MotionDetected, motionDetected);
+      motionSensorTwoService.updateCharacteristic(this.platform.Characteristic.MotionDetected, !motionDetected);
 
-      this.platform.log.debug('SwitchOneService:', !SwitchOnDetected);
-      this.platform.log.debug('SwitchTwoService:', !SwitchOffDetected);
+      this.platform.log.debug('Triggering motionSensorOneService:', motionDetected);
+      this.platform.log.debug('Triggering motionSensorTwoService:', !motionDetected);
     }, 10000);
   }
 
@@ -99,7 +94,7 @@ export class lenovo-plug {
   setOn(value: CharacteristicValue, callback: CharacteristicSetCallback) {
 
     // implement your own code to turn your device on/off
-    this.States.On = value as boolean;
+    this.exampleStates.On = value as boolean;
 
     this.platform.log.debug('Set Characteristic On ->', value);
 
@@ -123,7 +118,7 @@ export class lenovo-plug {
   getOn(callback: CharacteristicGetCallback) {
 
     // implement your own code to check if the device is on
-    const isOn = this.States.On;
+    const isOn = this.exampleStates.On;
 
     this.platform.log.debug('Get Characteristic On ->', isOn);
 
@@ -137,12 +132,12 @@ export class lenovo-plug {
    * Handle "SET" requests from HomeKit
    * These are sent when the user changes the state of an accessory, for example, changing the Brightness
    */
-  setSwitch(value: CharacteristicValue, callback: CharacteristicSetCallback) {
+  setBrightness(value: CharacteristicValue, callback: CharacteristicSetCallback) {
 
     // implement your own code to set the brightness
-    this.States.On = value as number;
+    this.exampleStates.Brightness = value as number;
 
-    this.platform.log.debug('Set Characteristic Switch -> ', value);
+    this.platform.log.debug('Set Characteristic Brightness -> ', value);
 
     // you must call the callback function
     callback(null);
